@@ -1,0 +1,16 @@
+name: GitHub Actions Bash Demo
+
+on:
+  push:
+    branches:
+      - 'ci/PolinaMinkova'
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - run: python --version
+      - run: pip install -r requirements.txt
+      - run: pytest
